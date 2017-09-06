@@ -1,0 +1,93 @@
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = undefined;
+var _jsxFileName = '/home/hiltonleite/\xC1rea de Trabalho/tutoriais/calculadora/App.js';
+
+var _react = require('react');
+
+var _react2 = babelHelpers.interopRequireDefault(_react);
+
+var _reactNative = require('react-native');
+
+var _Styles = require('./Styles.js');
+
+var _Styles2 = babelHelpers.interopRequireDefault(_Styles);
+
+var _InputButton = require('./InputButton');
+
+var _InputButton2 = babelHelpers.interopRequireDefault(_InputButton);
+
+var inputButtons = [[1, 2, 3, '/'], [4, 5, 6, '*'], [7, 8, 9, '-'], [0, '.', '=', '+']];
+
+var ReactCalculator = function (_Component) {
+    babelHelpers.inherits(ReactCalculator, _Component);
+
+    function ReactCalculator() {
+        babelHelpers.classCallCheck(this, ReactCalculator);
+        return babelHelpers.possibleConstructorReturn(this, (ReactCalculator.__proto__ || Object.getPrototypeOf(ReactCalculator)).apply(this, arguments));
+    }
+
+    babelHelpers.createClass(ReactCalculator, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _reactNative.View,
+                { style: _Styles2.default.rootContainer, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 17
+                    }
+                },
+                _react2.default.createElement(_reactNative.View, { style: _Styles2.default.displayContainer, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 18
+                    }
+                }),
+                _react2.default.createElement(
+                    _reactNative.View,
+                    { style: _Styles2.default.inputContainer, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 19
+                        }
+                    },
+                    this._renderInputButtons()
+                )
+            );
+        }
+    }, {
+        key: '_renderInputButtons',
+        value: function _renderInputButtons() {
+            var views = [];
+
+            for (var rowIndex = 0; rowIndex < inputButtons.length; rowIndex++) {
+                var row = inputButtons[rowIndex];
+
+                var inputRow = [];
+                for (var buttonIndex = 0; buttonIndex < row.length; buttonIndex++) {
+                    var input = row[buttonIndex];
+
+                    inputRow.push(_react2.default.createElement(_InputButton2.default, { value: input, key: rowIndex + '-' + buttonIndex, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 38
+                        }
+                    }));
+                }
+
+                views.push(_react2.default.createElement(
+                    _reactNative.View,
+                    { style: _Styles2.default.inputRow, key: "row-" + rowIndex, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 42
+                        }
+                    },
+                    inputRow
+                ));
+            }
+
+            return views;
+        }
+    }]);
+    return ReactCalculator;
+}(_react.Component);
+
+exports.default = ReactCalculator;
